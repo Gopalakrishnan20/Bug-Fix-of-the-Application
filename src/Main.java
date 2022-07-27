@@ -26,7 +26,7 @@ public class Main {
             // display the all the Strings mentioned in the String array
         }
         ArrayList<Integer> arrlist = new ArrayList<Integer>();
-        ArrayList<Integer> expenses = new ArrayList<Integer>();
+        ArrayList<Integer> expenses = new ArrayList<Integer>();       
         expenses.add(1000);
         expenses.add(2300);
         expenses.add(45000);
@@ -91,10 +91,24 @@ public class Main {
     private static void searchExpenses(ArrayList<Integer> arrayList) {
         int leng = arrayList.size();
         System.out.println("Enter the expense you need to search:\t");
+        Scanner sc=new Scanner(System.in);
+        int key=sc.nextInt();
+        if(arrayList.indexOf(key)==-1)
+        {
+        	System.out.println("Your Entered expenditure value is unavailable");
+        	System.out.println("\n");
+        }
+        else if(arrayList.indexOf(key)<=leng)
+        {
+        	int pos=arrayList.indexOf(key)+1;
+        	System.out.println("Your searching Value is in Index: "+arrayList.indexOf(key)+" And The Position: "+pos);
+        }
         //Complete the method
     }
     private static void sortExpenses(ArrayList<Integer> arrayList) {
         int arrlength =  arrayList.size();
+        arrayList.sort(null);
+        System.out.println(arrayList);          
        //Complete the method. The expenses should be sorted in ascending order.
     }
 }
